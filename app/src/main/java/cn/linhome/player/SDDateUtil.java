@@ -1,4 +1,4 @@
-package com.fanwe.player;
+package cn.linhome.player;
 
 import java.text.DateFormat;
 import java.text.ParseException;

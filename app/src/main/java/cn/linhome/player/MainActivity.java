@@ -1,4 +1,4 @@
-package com.fanwe.player;
+package cn.linhome.player;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.fanwe.lib.player.SDMediaPlayer;
+import cn.linhome.lib.player.SDMediaPlayer;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
