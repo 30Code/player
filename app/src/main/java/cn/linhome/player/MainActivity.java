@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import cn.linhome.lib.player.SDMediaPlayer;
+import cn.linhome.lib.player.FMediaPlayer;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private SurfaceView sfv_media;
 
-    private SDMediaPlayer mPlayer = new SDMediaPlayer();
+    private FMediaPlayer mPlayer = new FMediaPlayer();
 //    private SDMediaPlayer mPlayer = SDMediaPlayer.getInstance();
 
     private Button btn_start, btn_pause, btn_stop, btn_reset, btn_play_pause, btn_play_stop;
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        mPlayer.setOnExceptionCallback(new SDMediaPlayer.OnExceptionCallback()
+        mPlayer.setOnExceptionCallback(new FMediaPlayer.OnExceptionCallback()
         {
             @Override
             public void onException(Exception e)
@@ -99,18 +99,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.i(TAG, "onException:" + String.valueOf(e));
             }
         });
-        mPlayer.setOnStateChangeCallback(new SDMediaPlayer.OnStateChangeCallback()
+        mPlayer.setOnStateChangeCallback(new FMediaPlayer.OnStateChangeCallback()
         {
             @Override
-            public void onStateChanged(SDMediaPlayer.State oldState, SDMediaPlayer.State newState, SDMediaPlayer player)
+            public void onStateChanged(FMediaPlayer.State oldState, FMediaPlayer.State newState, FMediaPlayer player)
             {
                 Log.i(TAG, "onStateChanged:" + String.valueOf(newState));
             }
         });
-        mPlayer.setOnProgressCallback(new SDMediaPlayer.OnProgressCallback()
+        mPlayer.setOnProgressCallback(new FMediaPlayer.OnProgressCallback()
         {
             @Override
-            public void onProgress(int currentPosition, int totalDuration, SDMediaPlayer player)
+            public void onProgress(int currentPosition, int totalDuration, FMediaPlayer player)
             {
                 sb_progress.setMax(totalDuration);
                 sb_progress.setProgress(currentPosition);
